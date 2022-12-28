@@ -50,28 +50,21 @@ df = pd.DataFrame([],columns=['inputs','response'])
 
 for i in range(1,60,2):
 
-    
     driver.find_element(By.XPATH,'/html/body/div/div/div[1]/main/div[2]/form/div/div[2]/textarea').send_keys(texts)
     driver.find_element(By.XPATH,'/html/body/div/div/div/main/div[2]/form/div/div[2]/button').click()
-    # time.sleep(15)    
     WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div/div/div[1]/main/div[2]/form/div/div[1]/button')))
 
     inputs1=driver.find_element(By.XPATH,'/html/body/div/div/div/main/div[1]/div/div/div/div['+str(i)+']/div/div[2]/div[1]/div').text
     response1 = driver.find_element(By.XPATH,'/html/body/div/div/div[1]/main/div[1]/div/div/div/div['+str(i+1)+']/div/div[2]/div[1]/div/div').text
     print('/html/body/div/div/div[1]/main/div[1]/div/div/div/div['+str(i+1)+']/div/div[2]/div[1]/div/div')
-    print(inputs1)
-    print("-------------------------------------------------")
-    print(response1)
 
-    with open('input.txt', 'a') as f:
+    with open('input_sentence.txt', 'a') as f:
         f.write(inputs1)
         f.write('\n')
 
-    with open('output.txt', 'a') as f:
+    with open('chatgpt_sentence.txt', 'a') as f:
         f.write(response1)
         f.write('\n')
     
 
-
-print("done")
 

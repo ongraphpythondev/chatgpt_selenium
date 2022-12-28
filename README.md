@@ -17,8 +17,12 @@ source venv/bin/activate
 pip install -r requirments.txt
 ```
 
-## Change the Email and password to login into chatgpt
-## Change the text that you want to enter into chatgpt
+## Create a .env file like sample_env and make the following changes
+```
+text = "Enter your text here"
+email = "Enter your email here"
+password = "Enter your password here"
+```
 
 ## Run the project
 ```
