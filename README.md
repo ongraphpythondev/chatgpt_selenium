@@ -1,5 +1,5 @@
 # Chat GPT scrapping using selenium
-## In this project we are login into 'https://chat.openai.com/chat', enter the text  and getting response thirty time and append it to pandas dataframe
+In this project we are login into 'https://chat.openai.com/chat', enter the text  and getting response thirty time and append it to pandas dataframe
 
 ## Clone project use follwing command
 ```
