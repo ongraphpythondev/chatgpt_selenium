@@ -18,32 +18,21 @@ driver.get(url)
 driver.maximize_window()
 
 
-WebDriverWait(driver,20).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#__next > div > div > div.flex.flex-row.gap-3 > button:nth-child(1)')))
-driver.find_element(By.CSS_SELECTOR, '#__next > div > div > div.flex.flex-row.gap-3 > button:nth-child(1)').click()
-WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'/html/body/main/section/div/div/div/div[3]/form[1]/button')))
-driver.find_element(By.XPATH,'/html/body/main/section/div/div/div/div[3]/form[1]/button').click()
+WebDriverWait(driver,20).until(EC.presence_of_element_located((By.CSS_SELECTOR, '#__next > div > div > div.flex.flex-row.gap-3 > button:nth-child(1)'))).click()
+WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'/html/body/main/section/div/div/div/div[3]/form[1]/button'))).click()
 
 
-WebDriverWait(driver,10).until(EC.presence_of_element_located((By.ID,'identifierId')))
-driver.find_element(By.ID, 'identifierId').send_keys(email)
+WebDriverWait(driver,10).until(EC.presence_of_element_located((By.ID,'identifierId'))).send_keys(email)
 driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button").click()
 time.sleep(2)
 
-WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input')))
-driver.find_element(By.XPATH, '/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input').send_keys(password)
+WebDriverWait(driver,10).until(EC.presence_of_element_located((By.XPATH,'/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div[1]/div/div/div/div/div[1]/div/div[1]/input'))).send_keys(password)
 driver.find_element(By.XPATH,"/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div").click()
 
+WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button'))).click()
+WebDriverWait(driver,20).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]'))).click()
+WebDriverWait(driver,20).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]'))).click()
 
-WebDriverWait(driver,30).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button')))
-driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button').click()
-
-
-WebDriverWait(driver,20).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]')))
-driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]').click()
-
-
-WebDriverWait(driver,20).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]')))
-driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]').click()
 
 
 for i in range(1,60,2):
