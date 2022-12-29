@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-texts = os.getenv('text')
+texts = "paraphrase thirty times the following sentence where is the movie theater?"
 email = os.getenv('email')
 password = os.getenv('password')
 
