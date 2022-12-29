@@ -3,7 +3,6 @@ import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import pandas as pd
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -45,19 +44,17 @@ driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[
 
 WebDriverWait(driver,20).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]')))
 driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div/div[2]/div/div/div[2]/div[4]/button[2]').click()
-df = pd.DataFrame([],columns=['inputs','response'])
 
 
 for i in range(1,60,2):
 
     driver.find_element(By.XPATH,'/html/body/div/div/div[1]/main/div[2]/form/div/div[2]/textarea').send_keys(texts)
     driver.find_element(By.XPATH,'/html/body/div/div/div/main/div[2]/form/div/div[2]/button').click()
-    WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div/div/div[1]/main/div[2]/form/div/div[1]/button')))
+    WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div/div/div[1]/main/div[2]/form/div/div[1]')))
 
     inputs1=driver.find_element(By.XPATH,'/html/body/div/div/div/main/div[1]/div/div/div/div['+str(i)+']/div/div[2]/div[1]/div').text
     response1 = driver.find_element(By.XPATH,'/html/body/div/div/div[1]/main/div[1]/div/div/div/div['+str(i+1)+']/div/div[2]/div[1]/div/div').text
-    print('/html/body/div/div/div[1]/main/div[1]/div/div/div/div['+str(i+1)+']/div/div[2]/div[1]/div/div')
-
+    
     with open('input_sentence.txt', 'a') as f:
         f.write(inputs1)
         f.write('\n')
